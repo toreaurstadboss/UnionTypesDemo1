@@ -6,7 +6,8 @@ public static class Program
 		var pets = new Pet[]
 		{
 			new Dog("Rex", true),
-			new Cat("Misty", 9)
+			new Cat("Misty", 9),
+			new Bird("Polly", 35, true)
 		};
 
 		foreach (var pet in pets)
@@ -21,6 +22,7 @@ public static class Program
 		{
 			Dog dog => $"{dog.Name} is a dog and {(dog.LovesFetch ? "loves" : "does not love")} fetch.",
 			Cat cat => $"{cat.Name} is a cat with {cat.LivesLeft} lives left.",
+			Bird bird => $"{bird.Name} is a bird with a wingspan of {bird.WingSpan} cm{(bird.LovesCrackers ? " and loves crackers" : "")}",
 			null => "No pet"
 		};
 	}
@@ -30,4 +32,6 @@ sealed record Dog(string Name, bool LovesFetch);
 
 sealed record Cat(string Name, int LivesLeft);
 
-public union Pet(Dog, Cat);
+record Bird(string Name, double WingSpan, bool LovesCrackers);
+
+public union Pet(Dog, Cat, Bird);
