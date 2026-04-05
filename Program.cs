@@ -2,21 +2,28 @@
 public static class Program
 {
 	public static void Main()
-	{
-		var pets = new Pet[]
-		{
-			new Dog("Rex", true),
-			new Cat("Misty", 9),
-			new Bird("Polly", 35, true)
-		};
+    {
+        RunUnionTypeDemo0();
+		(new UnionExample1()).RunDemo1(4);
+    }
 
-		foreach (var pet in pets)
-		{
-			Console.WriteLine(Describe(pet));
-		}
-	}
+    private static void RunUnionTypeDemo0()
+    {
+        var pets = new Pet[]
+                {
+            new Dog("Rex", true),
+            new Cat("Misty", 9),
+            new Bird("Polly", 35, true)
+                };
 
-	private static string Describe(Pet pet)
+        foreach (var pet in pets)
+        {
+            Console.WriteLine(Describe(pet));
+			Console.WriteLine(pet.Value);
+        }
+    }
+
+    private static string Describe(Pet pet)
 	{
 		return pet switch
 		{
