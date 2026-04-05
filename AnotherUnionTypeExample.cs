@@ -1,8 +1,9 @@
-public class UnionExample1
+public class AnotherUnionTypeExample
 {
 
-    public void RunDemo1(IntOrString s)
+    public void RunDemo(IntOrString s)
     {
+        Console.WriteLine("DEMO STARTING ! Another union type example starting ...");
         Console.WriteLine(Describe(s));
     }
 
